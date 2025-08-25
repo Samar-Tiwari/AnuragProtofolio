@@ -1,8 +1,6 @@
 [build]
   command = "npm run build"
-  # 👇 check your dist folder after build
- dist/AnuRagProTfoLio/browser/index.html
-
+  publish = "dist/AnuRagProTfoLio/browser"
 
 [build.environment]
   NODE_VERSION = "20"
