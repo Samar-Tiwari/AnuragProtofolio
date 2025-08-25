@@ -1,11 +1,18 @@
 [build]
-  command = "npm run build"
+  command = "ng build --configuration production --ssr=false"
   publish = "dist/anu-rag-pro-tfo-lio/browser"
 
 [build.environment]
   NODE_VERSION = "20"
 
+[[plugins]]
+  package = "@netlify/angular-runtime"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+
+[functions]
+  # This is important for Angular SSR
+  node_bundler = "esbuild"
